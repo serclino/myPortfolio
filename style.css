@@ -20,19 +20,27 @@ nav {
     background-color: beige;
     position: fixed;
     transition: width 600ms ease;
+    overflow: scroll;
 }
 
 nav:hover {
     width: 16rem;
 }
 
+nav:hover .link-text {
+    display: inline;
+}
+
 nav ul {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
 }
 
 .nav-link {
+    padding: 1rem 0;
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 5rem;
     text-decoration: none;
@@ -47,13 +55,19 @@ nav ul {
 }
 
 .nav-link img {
-    width: 50%;
-    height: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0 1.5rem;
 }
 
 .link-text {
     display: none;
     margin-left: 1rem;
+}
+
+
+.nav-item:last-child {
+    margin-top: auto;
 }
 
 
