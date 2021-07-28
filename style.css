@@ -6,6 +6,7 @@
 
 body {
     font-size: 16px;
+    font-family: Cabin, sans-serif;
 }
 
 main {
@@ -13,32 +14,48 @@ main {
     padding: 10px;
 }
 
+/* general rules */
+
+
 /* Navigation */
 nav {
-    width: 5rem;
-    height: 100vh;
     background-color: beige;
     position: fixed;
     transition: width 600ms ease;
     overflow: scroll;
 }
 
-nav:hover {
-    width: 16rem;
+@media only screen and (min-width: 600px) {
+    nav {
+        width: 5rem;
+        height: 100vh;
+    }
+
+    nav:hover {
+        width: 16rem;
+    }
+    
+    nav:hover .link-text {
+        display: inline;
+    }
+    
+    nav:hover .logo img {
+        transform: rotate(-90deg);
+        margin-left: 11rem;
+    }
+    
+    nav:hover .logo-text {
+        display: inline;
+        left: 1.5rem;
+    }
 }
 
-nav:hover .link-text {
-    display: inline;
-}
-
-nav:hover .logo img {
-    transform: rotate(-90deg);
-    margin-left: 11rem;
-}
-
-nav:hover .logo-text {
-    display: inline;
-    left: 1.5rem;
+@media only screen and (max-width: 600px) {
+    nav {
+        width: 100vw;
+        bottom: 0;
+        left: 0;
+    }
 }
 
 nav ul {
@@ -48,6 +65,13 @@ nav ul {
     list-style-type: none;
 }
 
+@media only screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
 .nav-link {
     padding: 1rem 0;
     display: flex;
@@ -55,14 +79,21 @@ nav ul {
     height: 5rem;
     text-decoration: none;
     color: black;
-    filter: grayscale(100%) opacity(0.7);
-    transition: filter 600ms ease,
-                background-color 600ms ease;
+    text-transform: uppercase;
+    letter-spacing: 0.2ch;
 }
 
-.nav-link:hover {
-    filter: grayscale(0%) opacity(1);
-    background-color: orange;
+@media only screen and (min-width: 600px) {
+    .nav-link {
+        filter: grayscale(100%) opacity(0.7);
+        transition: filter 600ms ease,
+                    background-color 600ms ease;
+    }
+
+    .nav-link:hover {
+        filter: grayscale(0%) opacity(1);
+        background-color: orange;
+    }
 }
 
 .nav-link img {
@@ -71,43 +102,65 @@ nav ul {
     margin: 0 1.5rem;
 }
 
+@media only screen and (max-width: 420px) {
+    .nav-link img {
+        margin: 0 1rem;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .nav-link img {
+        margin: 0 .5rem;
+    }
+}
+
 .link-text {
     display: none;
     margin-left: 1rem;
 }
 
+@media only screen and (min-width: 600px) {
+    .nav-item:last-child {
+        margin-top: auto;
+    }
 
-.nav-item:last-child {
-    margin-top: auto;
+    .logo {
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.3ch;
+        line-height: 2rem;
+        filter: grayscale(0%) opacity(1);
+        background-color: #e4e4a1;
+        opacity: 0.7;
+        transition: opacity 600ms ease;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    .logo:hover {
+        opacity: 1;
+        background-color: #e4e4a1;
+    }
+    
+    .logo-text {
+        position: absolute;
+        left: -999px;
+        transition: left 450ms ease;
+    }
+    
+    .logo img {
+        transform: rotate(90deg);
+        transition: margin-left 600ms ease,
+                    transform 600ms ease;
+    }
 }
 
-.logo img {
-    transform: rotate(90deg);
-    transition: margin-left 600ms ease,
-                transform 600ms ease;
+@media only screen and (max-width: 600px) {
+    .nav-item:first-child { /* smaže logo; nelze udělat přes .logo class, nebot tam zustaval kousek z <li> */
+        display: none;
+    }
 }
 
-.logo {
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.3ch;
-    line-height: 2rem;
-    filter: grayscale(0%) opacity(1);
-    background-color: #e4e4a1;
-    opacity: 0.7;
-    transition: opacity 600ms ease;
-}
 
-.logo:hover {
-    opacity: 1;
-    background-color: #e4e4a1;
-}
-
-.logo-text {
-    position: absolute;
-    left: -999px;
-    transition: left 450ms ease;
-}
 
