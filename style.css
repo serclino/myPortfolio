@@ -208,5 +208,28 @@ header {
     object-fit: cover;
 }
 
+.headline {
+    position: relative;
+    left: 1vw;
+    bottom: 30px;
+}
+
+.headline p {
+    line-height: 1.5;
+}
+
+.headline p:first-child {
+    color: white;
+}
+
+.name {
+    font-family: 'Roboto Condensed', Sans-Serif;
+    font-size: 70px;
+    text-transform: uppercase;
+    letter-spacing: 0.2ch;
+    color: #298fb8;
+    display: block;
+    padding: 10px 0;
+}
 
 
