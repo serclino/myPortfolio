@@ -15,5 +15,11 @@ if (window.innerWidth > 600) {
     .fromTo(slider,1.2, {x: '200%'}, {x: '0%', ease: Power2.easeInOut}, "-=1.2")
     .fromTo(nav,1, {x: '-110%'}, {x: '0%', ease: Power2.easeInOut})
     .fromTo(headline,1, {opacity: '0', x: '-30'}, {opacity: '1', x: '0', ease: Power2.easeInOut}, "-=1")
-    .fromTo(arrow,0.5, {opacity: '0'}, {opacity: '1', ease: Power2.easeInOut}, "+=1.3")
+    .fromTo(arrow,0.5, {opacity: '0'}, {opacity: '1', ease: Power2.easeInOut}, "+=1.3");
+} else if (window.innerWidth < 600) {
+    tl.fromTo(hero,1, {width: '0%'}, {width: '100%', ease: Power2.easeInOut})
+    .fromTo(hero,1, {height: '60%'}, {height: '45%', ease: Power2.easeInOut})
+    .fromTo(headline,1, {opacity: '0', x: '-30'}, {opacity: '1', x: '0', ease: Power2.easeInOut})
+    .fromTo(nav,1, {y: '110%'}, {y: '0%', ease: Power2.easeInOut}, "-=1")
+    .fromTo(arrow,0.5, {opacity: '0'}, {opacity: '1', ease: Power2.easeInOut}, "+=1.3");
 }

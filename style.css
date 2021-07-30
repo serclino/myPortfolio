@@ -204,7 +204,6 @@ nav ul {
     position: absolute;
     bottom: 40px;
     left: 50%;
-    transform: translateX(-50%);
     animation: arrowUpAndDown 1s ease-in-out infinite alternate;
 }
 
