@@ -14,6 +14,12 @@ main {
     margin-left: 5rem;
 }
 
+@media only screen and (max-width: 600px) {
+    main {
+        margin-left: 0;
+    }
+}
+
 /* general rules */
 h1 {
     font-size: 48px;
@@ -178,6 +184,30 @@ nav ul {
 
 
 /* section: About */
+#about {
+    height: 100vh;
+    width: 100%;
+}
+
+.arrow {
+    width: 20px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: arrowUpAndDown 1s ease-in-out infinite alternate;
+}
+
+@keyframes arrowUpAndDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(50%);
+    }
+}
+
 .slider {
     position: absolute;
     top: 0;
@@ -194,6 +224,7 @@ header {
     align-items: center;
     justify-content: center;
 }
+
 
 .hero {
     height: 60%;
