@@ -189,6 +189,16 @@ nav ul {
     width: 100%;
 }
 
+@keyframes arrowUpAndDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(50%);
+    }
+}
+
 .arrow {
     width: 20px;
     position: absolute;
@@ -198,14 +208,14 @@ nav ul {
     animation: arrowUpAndDown 1s ease-in-out infinite alternate;
 }
 
-@keyframes arrowUpAndDown {
-    0% {
-        transform: translateY(0);
+@media only screen and (max-width: 600px) {
+    .arrow {
+        bottom: 110px;
     }
+}
 
-    100% {
-        transform: translateY(50%);
-    }
+.arrow img {
+    transform: translateX(-50%);
 }
 
 .slider {
@@ -225,12 +235,24 @@ header {
     justify-content: center;
 }
 
+@media only screen and (max-width: 600px) {
+    header {
+        align-items: flex-start;
+    }
+}
 
 .hero {
     height: 60%;
     width: 100%;
     position: relative;
     border: #191726 solid 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .hero {
+        margin: .5rem .5rem 0 .5rem;
+        border: #191726 solid 3px;
+    }
 }
 
 .hero img {
@@ -243,6 +265,12 @@ header {
     position: relative;
     left: 1vw;
     bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    .headline {
+        margin-left: 10px;
+    }
 }
 
 .headline p {
@@ -263,4 +291,9 @@ header {
     padding: 10px 0;
 }
 
+@media only screen and (max-width: 370px) {
+    .name {
+        font-size: 60px;
+    }
+}
 
