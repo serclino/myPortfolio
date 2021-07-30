@@ -210,7 +210,7 @@ nav ul {
 
 @media only screen and (max-width: 600px) {
     .arrow {
-        bottom: 110px;
+        bottom: 12%;
     }
 }
 
@@ -250,8 +250,8 @@ header {
 
 @media only screen and (max-width: 600px) {
     .hero {
-        margin: .5rem .5rem 0 .5rem;
-        border: #191726 solid 3px;
+        margin: 0;
+        border: none;
     }
 }
 
