@@ -1,3 +1,4 @@
+// Opening animations
 const hero = document.querySelector('.hero');
 const slider = document.querySelector('.slider');
 const headline = document.querySelector('.headline');
@@ -23,3 +24,28 @@ if (window.innerWidth > 600) {
     .fromTo(nav,1, {y: '110%'}, {y: '0%', ease: Power2.easeInOut}, "-=1")
     .fromTo(arrow,0.5, {opacity: '0'}, {opacity: '1', ease: Power2.easeInOut}, "+=1.3");
 }
+
+//Projects popUp
+const modal = document.querySelector('.modal');
+const previews = document.querySelectorAll('.gallery img');
+const original = document.querySelector('.full-img');
+const caption = document.querySelector('.caption');
+
+previews.forEach(preview => {
+    preview.addEventListener("click", () => {
+        modal.classList.add("open");
+        original.classList.add('open');
+        //Dynamic change text and image
+        const originalSrc = preview.getAttribute('data-original');
+        original.src = `./resources/images/projects/${originalSrc}`;
+        const altText = preview.alt;
+        caption.textContent = altText;
+    })
+})
+
+modal.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+        modal.classList.remove('open');
+        original.classList.remove('open');
+    }
+})
