@@ -306,9 +306,31 @@ header {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    min-height: 100vh;
-    grid-gap: 2rem;
+    grid-template-areas:"heading heading"
+                        "picture-1 picture-2"
+                        "picture-3 picture-4";
+    grid-template-rows: 10% 45% 45%;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    height: 100vh;
+    padding: 5%;
+}
+
+@media only screen and (max-width: 900px) {
+    .gallery {
+        grid-template-areas: none;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% repeat(4, 30%);
+        grid-gap: 1rem;
+
+        overflow: scroll;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    h2 {
+        grid-area: heading;;
+    }
 }
 
 .img-container {
