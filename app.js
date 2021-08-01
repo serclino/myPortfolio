@@ -31,6 +31,8 @@ const previews = document.querySelectorAll('.gallery img');
 const original = document.querySelector('.full-img');
 const caption = document.querySelector('.caption');
 
+let popUp;
+
 previews.forEach(preview => {
     preview.addEventListener("click", () => {
         modal.classList.add("open");
@@ -38,8 +40,17 @@ previews.forEach(preview => {
         //Dynamic change text and image
         const originalSrc = preview.getAttribute('data-original');
         original.src = `./resources/images/projects/${originalSrc}`;
-        const altText = preview.alt;
-        caption.textContent = altText;
+
+        const path = preview.alt;
+        popUp = document.querySelector(`.${path}`);
+        modal.appendChild(popUp);
+        popUp.style.opacity = '1';
+
+        if (window.innerWidth > 600) {
+            popUp.style.bottom = '0%';
+        } else if (window.innerWidth < 600) {
+            popUp.style.bottom = '20%';
+        }
     })
 })
 
@@ -47,6 +58,8 @@ modal.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal')) {
         modal.classList.remove('open');
         original.classList.remove('open');
+        popUp.style.opacity = '0';
+        popUp.style.bottom = '-100%';
     }
 })
 
