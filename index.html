@@ -190,7 +190,7 @@
                         <div class="empty"></div>
                     </div>
 
-                    <p class="level-text">beginner</p>
+                    <p class="level-text">advanced</p>
                 </div>
 
                 <div class="skillContainer">
@@ -246,39 +246,55 @@
         <section id="contact">
             <h2>Contact</h2>
 
+            <div class="mail-container">
             <form action="" method="POST">
-                <label for="name">First name:</label>
-                <br>
-                <input type="text" name="name" id="name"> 
-                <br>
-                <label for="email">Email:</label>
-                <br>
-                <input type="text" name="email" id="email">
-                <br>
-                <label for="experience">Number of <i>months</i> on Codecademy:</label>
-                <br>
-                <input type="number" name="experience" id="experience">
-                <br>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Number of <i>months</i> on Codecademy</label>
+                    <input type="number" name="experience" id="experience">
+                </div>
 
                 <p>How would you rate this page? (1 = the best | 5 = the worst)</p>
-                <input type="radio" id="one" name="answer" value="1">
-                <label for="one">1</label>
-                <input type="radio" id="two" name="answer" value="2">
-                <label for="two">2</label>
-                <input type="radio" id="three" name="answer" value="3">
-                <label for="three">3</label>
-                <input type="radio" id="four" name="answer" value="4">
-                <label for="four">4</label>
-                <input type="radio" id="five" name="answer" value="5">
-                <label for="five">5</label>
-                <br>
-                <label for="message">Message:</label>
-                <br>
-                <textarea name="message" id="message" rows="5" cols="30" placeholder="Say something..."></textarea>
-                <br>
-                <input type="sumbit" value="Send">
+                <div class="form-rate-group">
+                    <div>
+                        <input type="radio" id="one" name="answer" value="1">
+                        <label for="one">1</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="two" name="answer" value="2">
+                        <label for="two">2</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="three" name="answer" value="3">
+                        <label for="three">3</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="four" name="answer" value="4">
+                        <label for="four">4</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="five" name="answer" value="5">
+                        <label for="five">5</label>
+                    </div>
+                </div>
 
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="5" cols="30" placeholder="Say something..." required></textarea>
+                </div>
+
+                <input type="submit" value="Submit">
             </form>
+            </div>
 
         </section>
 
