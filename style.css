@@ -230,8 +230,14 @@ nav ul {
     left: 0;
     background: linear-gradient(to right, #f2955e, #d97e7e);
     width: 100%;
-    height: 400vh;
+    height: 420vh;
     z-index: -1;
+}
+
+@media only screen and (max-width: 600px) {
+    .slider {
+        height: 445vh;
+    }
 }
 
 header {
@@ -633,7 +639,7 @@ input[type="submit"]:hover {
 @media only screen and (max-width: 600px) {
     #status {
         position: relative;
-        bottom: 15vh;
+        bottom: 10vh;
     }
 }
 
@@ -666,3 +672,19 @@ input[type="submit"]:hover {
 }
 
 /* footer */
+footer {
+    height: 20vh;
+    line-height: 1.2rem;
+    font-size: .75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    footer {
+        justify-content: flex-start;
+    }
+}
