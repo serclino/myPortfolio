@@ -80,7 +80,7 @@ async function handleSubmit(event) {
     form.reset(); // this must be first!
     status.classList.add('success');
     status.innerHTML = "Thanks for your submission!";
-    console.log('Success!');
+    console.log('Success!'); //just for control
   }).catch(error => {
     status.classList.add('error');
     status.innerHTML = "Oops! There was a problem submitting your form";
