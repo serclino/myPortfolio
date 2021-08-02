@@ -547,6 +547,12 @@ header {
     padding: 5%;
 }
 
+@media only screen and (max-width: 600px) {
+    #contact {
+        height: 120vh;
+    }
+}
+
 #contact h2 {
     height: 10%;
 }
@@ -585,11 +591,15 @@ form p {
 
 .form-rate-group {
     display: flex;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .form-rate-group div {
     flex-grow: 1;
+}
+
+.form-rate-group label {
+    margin-left: 5px;
 }
 
 input[type="submit"] {
@@ -611,3 +621,48 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: rgba(217,126,126,1);
 }
+
+#status {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    #status {
+        position: relative;
+        bottom: 15vh;
+    }
+}
+
+#status.success {
+    background-color: rgb(211,250,153);
+    border: 1px solid #191726;
+    animation: status 4s ease forwards;
+}
+
+#status.error {
+    background-color: rgb(250, 129, 92);
+    color: white;
+    border: 1px solid white;
+    animation: status 4s ease forwards;
+}
+
+@keyframes status {
+    0%{
+        opacity: 1;
+        pointer-events: all; 
+    }
+    90%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    100%{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* footer */
