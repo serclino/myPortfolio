@@ -509,6 +509,7 @@ header {
     width: 10%;
     min-width: 100px;
     margin: 10px;
+
 }
 
 .skillContainer img {
@@ -690,4 +691,8 @@ input[type="submit"]:hover {
 .end {
     font-size: .75rem;
     text-align: center;
+}
+
+.end a {
+    color: #191726;
 }

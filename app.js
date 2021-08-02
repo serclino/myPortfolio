@@ -89,3 +89,48 @@ async function handleSubmit(event) {
 form.addEventListener("submit", handleSubmit)
 
 //Night-Day switch
+
+const theme  = document.getElementById('switch');
+const themeImg = document.querySelector('.themeImg');
+const themeTxt = document.querySelector('.themeTxt');
+
+theme.addEventListener('click', () => {
+    if (theme.classList.contains('day')) {
+        theme.classList.replace('day', 'night');
+
+        //change image & text
+        themeImg.src = './resources/images/navigation/day-color.svg';
+        themeTxt.innerHTML = 'Bright';
+
+        //style rest of the document
+            document.querySelector('.slider').style.background = '#191726';
+            document.body.style.color = 'white';
+            //style nav
+            document.querySelector('nav').style.backgroundColor = '#514b7c';
+
+            //style skills
+            const skillContainers = document.querySelectorAll('.skillContainer');
+            skillContainers.forEach(skillContainer => {
+                skillContainer.style.backgroundColor = 'rgba(255,255,255,0.3)';
+                skillContainer.style.padding = '10px';
+                skillContainer.style.borderRadius = '8px';
+            })
+            const levelTexts = document.querySelectorAll('.level-text');
+            levelTexts.forEach(levelText => {
+                levelText.style.fontSize = '0.75rem';
+            })
+
+            //style arrow + bílý border kolem headeru
+
+
+
+    } else if (theme.classList.contains('night')) {
+        theme.classList.replace('night', 'day');
+
+        //change image & text
+        themeImg.src = './resources/images/navigation/night-color.svg';
+        themeTxt.innerHTML = 'Dark';
+
+        document.querySelector('.slider').style.background = 'linear-gradient(to right, #f2955e, #d97e7e)';
+    }
+})
