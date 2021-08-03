@@ -9,7 +9,7 @@
  * JavaScript (I also used AJAX for HTML form)
  
  ## Launch
- Just go here -> [https://serclino.github.io/myPortfolio/](#https://serclino.github.io/myPortfolio/)
+ Just go here -> [https://serclino.github.io/myPortfolio/](https://serclino.github.io/myPortfolio/)
  
  ## Preview
  ![Preview image](./resources/images/projects/myPortfolio-full.png)
