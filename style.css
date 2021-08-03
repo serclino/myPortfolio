@@ -130,7 +130,15 @@ nav ul {
 
     .nav-link:hover {
         filter: grayscale(0%) opacity(1);
+
+    }
+
+    .day:hover {
         background-color: #f2955e;
+    }
+
+    .night:hover {
+        background-color: #756ea7;
     }
 }
 
@@ -221,10 +229,8 @@ nav ul {
 
     margin: 0 auto;
     width: 20px;
-
     position: relative;
     top: 13%;
-
     animation: arrowUpAndDown 1s ease-in-out infinite alternate;
 }
 
