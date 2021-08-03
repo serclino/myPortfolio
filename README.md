@@ -8,13 +8,13 @@
  * CSS
  * JavaScript (I also used AJAX for HTML form)
  
- ##Launch
+ ## Launch
  Just go here -> [https://serclino.github.io/myPortfolio/](#https://serclino.github.io/myPortfolio/)
  
- ##Preview
+ ## Preview
  ![Preview image](./resources/images/projects/myPortfolio-full.png)
  
- ##Features
+ ## Features
  * opening animation when you visit my website
  * animated navbar when you hover over it
  * pop-up images within the Projects section
