@@ -93,84 +93,100 @@ form.addEventListener("submit", handleSubmit)
 const theme  = document.getElementById('switch');
 const themeImg = document.querySelector('.themeImg');
 const themeTxt = document.querySelector('.themeTxt');
+const body = document.body;
+    //local storage
+    const rememberSet = localStorage.getItem('theme');
+    if (rememberSet) {
+        body.classList.replace('day', 'night');
+    }
 
 theme.addEventListener('click', () => {
-    if (theme.classList.contains('day')) {
-        theme.classList.replace('day', 'night');
+    if (body.classList.contains('day')) {
+        body.classList.replace('day', 'night');
+        localStorage.setItem('theme', 'night');
+        changeTheme();
 
-        //change image & text
-        themeImg.src = './resources/images/navigation/day-color.svg';
-        themeTxt.innerHTML = 'Bright';
-
-        //style rest of the document
-            document.querySelector('.slider').style.background = '#191726';
-            document.body.style.color = 'white';
-            //style nav
-            document.querySelector('nav').style.backgroundColor = '#514b7c';
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(navLink => {
-                navLink.style.color = 'white';
-                navLink.classList.replace('day', 'night');
-            })
-            //style skills
-            const skillContainers = document.querySelectorAll('.skillContainer');
-            skillContainers.forEach(skillContainer => {
-                skillContainer.style.backgroundColor = 'rgba(255,255,255,0.3)';
-                skillContainer.style.padding = '10px';
-                skillContainer.style.borderRadius = '8px';
-            })
-            const levelTexts = document.querySelectorAll('.level-text');
-            levelTexts.forEach(levelText => {
-                levelText.style.fontSize = '0.75rem';
-            })
-            //style form
-            document.querySelector('form').style.background = '#514b7c';
-            const endLinks = document.querySelectorAll('.end a');
-            endLinks.forEach(endLink => {
-                endLink.style.color = 'white';
-            })
-            document.querySelector('input[type="submit"]').style.backgroundColor = 'rgba(85,179,217,0.8)';
-            document.querySelector('input[type="submit"]').style.color = 'white';
-
-
-
-    } else if (theme.classList.contains('night')) {
-        theme.classList.replace('night', 'day');
-
-        //change image & text
-        themeImg.src = './resources/images/navigation/night-color.svg';
-        themeTxt.innerHTML = 'Dark';
-
-        //style rest of the document
-            document.querySelector('.slider').style.background = 'linear-gradient(to right, #f2955e, #d97e7e)';
-            document.body.style.color = '#191726';
-            //style nav
-            document.querySelector('nav').style.backgroundColor = '#f2ba52';
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(navLink => {
-                navLink.style.color = '#191726';
-                navLink.classList.replace('night', 'day');
-            })
-            //style skills
-            const skillContainers = document.querySelectorAll('.skillContainer');
-            skillContainers.forEach(skillContainer => {
-                skillContainer.style.backgroundColor = 'transparent';
-                skillContainer.style.padding = '0px';
-                skillContainer.style.borderRadius = '0px';
-            })
-            const levelTexts = document.querySelectorAll('.level-text');
-            levelTexts.forEach(levelText => {
-                levelText.style.fontSize = '1rem';
-            })
-
-
-            //style form
-            document.querySelector('form').style.background = '#f2ba52';
-            const endLinks = document.querySelectorAll('.end a');
-            endLinks.forEach(endLink => {
-                endLink.style.color = '#191726';
-            })
-            document.querySelector('input[type="submit"]').style.backgroundColor = 'rgba(217,126,126,0.8)';
-            document.querySelector('input[type="submit"]').style.color = '#191726';    
+    } else if (body.classList.contains('night')) {
+        body.classList.replace('night', 'day');
+        localStorage.clear();
+        changeTheme();
     }
 })
+
+
+const changeTheme = () => {
+    if (body.classList.contains('night')) {
+            //change image & text
+            themeImg.src = './resources/images/navigation/day-color.svg';
+            themeTxt.innerHTML = 'Light';
+
+            //style rest of the document
+                document.querySelector('.slider').style.background = '#191726';
+                document.body.style.color = 'white';
+                //style nav
+                document.querySelector('nav').style.backgroundColor = '#514b7c';
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(navLink => {
+                    navLink.style.color = 'white';
+                    navLink.classList.replace('day', 'night');
+                })
+                //style skills
+                const skillContainers = document.querySelectorAll('.skillContainer');
+                skillContainers.forEach(skillContainer => {
+                    skillContainer.style.backgroundColor = 'rgba(255,255,255,0.3)';
+                    skillContainer.style.padding = '10px';
+                    skillContainer.style.borderRadius = '8px';
+                })
+                const levelTexts = document.querySelectorAll('.level-text');
+                levelTexts.forEach(levelText => {
+                    levelText.style.fontSize = '0.75rem';
+                })
+                //style form
+                document.querySelector('form').style.background = '#514b7c';
+                const endLinks = document.querySelectorAll('.end a');
+                endLinks.forEach(endLink => {
+                    endLink.style.color = 'white';
+                })
+                document.querySelector('input[type="submit"]').style.backgroundColor = 'rgba(85,179,217,0.8)';
+                document.querySelector('input[type="submit"]').style.color = 'white';
+
+    } else if (body.classList.contains('day')) {
+            //change image & text
+            themeImg.src = './resources/images/navigation/night-color.svg';
+            themeTxt.innerHTML = 'Dark';
+
+            //style rest of the document
+                document.querySelector('.slider').style.background = 'linear-gradient(to right, #f2955e, #d97e7e)';
+                document.body.style.color = '#191726';
+                //style nav
+                document.querySelector('nav').style.backgroundColor = '#f2ba52';
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(navLink => {
+                    navLink.style.color = '#191726';
+                    navLink.classList.replace('night', 'day');
+                })
+                //style skills
+                const skillContainers = document.querySelectorAll('.skillContainer');
+                skillContainers.forEach(skillContainer => {
+                    skillContainer.style.backgroundColor = 'transparent';
+                    skillContainer.style.padding = '0px';
+                    skillContainer.style.borderRadius = '0px';
+                })
+                const levelTexts = document.querySelectorAll('.level-text');
+                levelTexts.forEach(levelText => {
+                    levelText.style.fontSize = '1rem';
+                })
+
+
+                //style form
+                document.querySelector('form').style.background = '#f2ba52';
+                const endLinks = document.querySelectorAll('.end a');
+                endLinks.forEach(endLink => {
+                    endLink.style.color = '#191726';
+                })
+                document.querySelector('input[type="submit"]').style.backgroundColor = 'rgba(217,126,126,0.8)';
+                document.querySelector('input[type="submit"]').style.color = '#191726';
+    }
+}
+
+changeTheme();
