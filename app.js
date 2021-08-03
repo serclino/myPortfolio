@@ -30,7 +30,6 @@ const modal = document.querySelector('.modal');
 const previews = document.querySelectorAll('.gallery img');
 const original = document.querySelector('.full-img');
 const caption = document.querySelector('.caption');
-
 let popUp;
 
 previews.forEach(preview => {
@@ -143,6 +142,7 @@ const changeTheme = () => {
                 })
                 //style form
                 document.querySelector('form').style.background = '#514b7c';
+                document.getElementById('status').style.color = '#191726';
                 const endLinks = document.querySelectorAll('.end a');
                 endLinks.forEach(endLink => {
                     endLink.style.color = 'white';
